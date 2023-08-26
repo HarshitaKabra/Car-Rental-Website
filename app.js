@@ -11,7 +11,7 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 const formidable=require('formidable');
 const socketIO=require('socket.io');
 const http=require('http');
-const stripe=require('stripe')('sk_test_51LHlpmSIy1eajy2wVZTvnhLlhCDEg1KiGN82lCIgoo5GllxQLLSr3TQ8imnnrsMs9eUP4kRRcpHGrztN67SwDkXR00GpAE1kgt');
+const stripe=require('stripe')('');
 
 const app=express();
 
@@ -25,7 +25,7 @@ app.use(function (req, res, next) {
 
 app.use(cookieParser());
 app.use(session({
-    secret: 'mysecret',
+    secret: '',
     resave: true,
     saveUninitialized: true
 }));
@@ -49,7 +49,7 @@ const Car = require('./models/car');
 const Budjet=require('./models/budjet');
 
 
-mongoose.connect('mongodb+srv://harshi:24011976**@cluster0.tuwgx.mongodb.net/?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://harshi:@cluster0.tuwgx.mongodb.net/?retryWrites=true&w=majority',{
     useNewUrlParser: true
 },()=>{
     console.log('MongoDB is connected');
